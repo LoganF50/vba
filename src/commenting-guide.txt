@@ -1,0 +1,64 @@
+COMMENTING GUIDE: [Updated 11/17/24 6:55AM]
+
+GENERAL USAGE
+--------------------------------------------------------------------------
+	1. Use psuedo JSDoc for code commenting allowing for consistent, searchable comments for all procedures
+	2. Tags are used directly above code it is for in comment blocks
+	3. See "EXAMPLES" section for how to format
+
+TAGS (in order)
+--------------------------------------------------------------------------
+1. @description <description>
+	a. <description> describe what procedure does
+
+2. @param <{type}> <[name=default]> <description>
+	a. <{type}>: type of parameter (Boolean, Long, String, etc)
+		i. use "...Variant" to denote a ParamArray
+	b. <[name=default]>: name of parameter and any default value
+		i. wrapping in "[]" for optional parameters
+		ii. only include "=default" when default value is provided (only optional parameters have defaults)
+	c. <description>: optional description
+
+3. @needs <name> <description>
+	a. <name>: name of need
+	b. <description>: brief description
+
+4. @requires <wb.module.procedure>
+	a. <wb.module.procedure>: path to code that is called
+
+5. @returns <{type}> <description>
+	a. <{type}>: type of return value (Boolean, Long, String, etc)
+	b. <description>: optional description of what is returned
+
+NEEDS VS REQUIREMENTS
+--------------------------------------------------------------------------
+	1. needs: anything needed for procedure that is not code
+		a. e.g. named ranges, tables, prerequisites
+	2. requirements: all code called
+
+EXAMPLES
+--------------------------------------------------------------------------
+	1. '/**
+		 ' * @description add two numbers
+		 ' * @param {Double} a
+		 ' * @param {Double} b
+		 ' * @returns {Double}
+		 ' */
+		 Function Add(a as Double, b as Double) as Double
+			Add = a + b
+		 End Function
+
+AUTO-COMMENTER
+--------------------------------------------------------------------------
+	1. What it will comment
+		a. description skeleton
+		b. parameters
+		c. requirements
+		d. returns (omitted if no return)
+	2. What needs to be added to auto-comments
+		a. all tag descriptions
+	3. what needs to be fully added manually
+		a. any needs
+		b. any requirements that are not fully qualified
+			i. e.g. using 'With' for forms
+==========================================================================
