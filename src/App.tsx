@@ -36,6 +36,7 @@ function App() {
                 className="grow"
                 onChange={(e) => setInputText(e.target.value)}
                 value={inputText}
+                spellCheck="false"
               />
               <Button onClick={handleConvert}>Convert</Button>
               <Button onClick={handleClearAll}>Clear All</Button>

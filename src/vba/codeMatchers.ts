@@ -172,7 +172,7 @@ export function getVBAProcedures(moduleText: string) {
   const vbaProcedureWithReturnRegex =
     /^(?:(Public|Private)\s)?(Function|Property Get)\s(\w+)\(((?:.|\n)*?)\)\sAs\s(\w+)\n((?:.|\n)+?)End\s(?:Function|Property)$/gm;
   const vbaProcedureWithNoReturnRegex =
-    /^(?:(Public|Private)\s)?(Sub|Property Let|Property Set)\s(\w+)\(((?:.|\n)+?)\)\n((?:.|\n)+?)End\s(?:Sub|Property)$/gm;
+    /^(?:(Public|Private)\s)?(Sub|Property Let|Property Set)\s(\w+)\(((?:.|\n)*?)\)\n((?:.|\n)+?)End\s(?:Sub|Property)$/gm;
   let regexMatch: RegExpExecArray | null = null;
   let vbaProcedures: VBAProcedure[] = [];
 
