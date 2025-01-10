@@ -19,7 +19,7 @@ export function getModuleConstants(moduleText: string) {
   //match module level consts only
   //only works as procedure consts are indented
   const constRegex =
-    /^(?:(Public|Private)\s)?Const\s(\w+)\sAs\s(\w+)\s=\s((?:\w|")+)$/gm;
+    /^(?:(Public|Private)\s)?Const\s(\w+)\sAs\s(\w+)\s=\s((?:.)+)$/gm;
   let regexMatch: RegExpExecArray | null = null;
   let constantList: ModuleConstant[] = [];
 
